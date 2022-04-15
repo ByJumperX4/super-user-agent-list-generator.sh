@@ -23,8 +23,12 @@ sh $CURR_DIR/sources.sh $CURR_DIR/temp
 # Filter user agents
 sh $CURR_DIR/filters.sh $CURR_DIR/temp
 
-# Move the final user agents list out of the temp dir
+# Generate oscpu
+sh $CURR_DIR/oscpu.sh $CURR_DIR/temp
+
+# Move the final files out of the temp dir
 mv $CURR_DIR/temp/user-agents.txt $CURR_DIR/user-agents.txt
+mv $CURR_DIR/temp/oscpu.txt $CURR_DIR/oscpu.txt
 
 # Remove temp dir as we don't need it anymore
 rm -rfv $CURR_DIR/temp
